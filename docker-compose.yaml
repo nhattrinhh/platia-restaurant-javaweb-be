@@ -2,14 +2,11 @@ version: '3.9'
 
 services:
   mysql:
-    image: mysql:5.7 # down to speed
+    image: mysql:5.7
     container_name: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: platia
-      MYSQL_USER: user123
-      MYSQL_PASSWORD: pass123
     ports:
       - "3306:3306"
     volumes:
@@ -23,8 +20,9 @@ services:
     depends_on:
       - mysql
     environment:
-      MYSQL_USER: user123
-      MYSQL_PASSWORD: pass123
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/platia?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: user123
+      SPRING_DATASOURCE_PASSWORD: pass123
     ports:
       - "8080:8080"
 
