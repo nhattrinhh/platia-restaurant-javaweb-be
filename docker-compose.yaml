@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   mysql:
-    image: mysql:8.0
+    image: mysql:5.7 # down to speed
     container_name: mysql
     restart: always
     environment:
