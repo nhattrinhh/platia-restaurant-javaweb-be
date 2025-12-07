@@ -1,4 +1,7 @@
-version: '3.9'
+version: "3.9"
+
+volumes:
+  mysql_data:
 
 services:
   mysql:
@@ -14,7 +17,7 @@ services:
       - ./initdb:/docker-entrypoint-initdb.d
 
   springboot:
-    build: .
+    build: ./springboot
     container_name: springboot
     restart: always
     depends_on:
@@ -23,8 +26,3 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/platia?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: user123
       SPRING_DATASOURCE_PASSWORD: pass123
-    ports:
-      - "8080:8080"
-
-volumes:
-  mysql_data:
