@@ -7,13 +7,14 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: platia
       MYSQL_USER: user123
       MYSQL_PASSWORD: pass123
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
 
   springboot:
     build: .

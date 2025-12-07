@@ -18,6 +18,9 @@
 --
 -- Table structure for table `bookings`
 --
+CREATE DATABASE platia;
+GRANT ALL PRIVILEGES ON platia.* TO 'user123'@'%';
+FLUSH PRIVILEGES;
 
 DROP TABLE IF EXISTS `bookings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
