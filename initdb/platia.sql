@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: localhost    Database: foodiehub
+-- Host: localhost    Database: platia
 -- ------------------------------------------------------
 -- Server version	8.0.41
 
@@ -18,17 +18,7 @@
 --
 -- Table structure for table `bookings`
 --
--- Tạo database nếu chưa tồn tại
-CREATE DATABASE IF NOT EXISTS platia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Tạo user nếu chưa có
-CREATE USER IF NOT EXISTS 'user123'@'%' IDENTIFIED BY 'pass123';
-
-GRANT ALL PRIVILEGES ON platia.* TO 'user123'@'%';
-FLUSH PRIVILEGES;
-
--- Sử dụng database
-USE platia;
 
 DROP TABLE IF EXISTS `bookings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -48,7 +38,7 @@ CREATE TABLE `bookings` (
   PRIMARY KEY (`id`),
   KEY `FKeyog2oic85xg7hsu2je2lx3s6` (`user_id`),
   CONSTRAINT `FKeyog2oic85xg7hsu2je2lx3s6` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +47,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (6,'outdoor','2025-08-02','08:58:00.000000','2025-07-27 07:58:50.674535','hhh',2,'0982376668','','CONFIRMED',53),(7,'vip','2025-07-30','09:49:00.000000','2025-07-29 09:43:49.979863','hhh',3,'0937874649','','CONFIRMED',53),(12,'indoor','2025-07-31','12:47:00.000000','2025-07-29 12:42:30.649579','hhh',3,'0982376667','Dị ứng hải sản\n','CONFIRMED',53),(14,'vip','2025-08-01','07:48:00.000000','2025-07-30 07:47:51.575029','Nguyen Van A',1,'0982376667','','CANCELLED',53),(18,'indoor','2025-08-01','20:42:00.000000','2025-07-30 08:42:35.023205','hhhhh',1,'0982376667','','CONFIRMED',58),(19,'indoor','2025-08-02','08:48:00.000000','2025-07-30 08:43:02.893763','jjj',1,'0982376667','','CONFIRMED',58),(20,'vip','2025-08-01','08:54:00.000000','2025-07-30 08:49:33.805484','Nguyen Van A',1,'0982376667','','CANCELLED',53),(21,'indoor','2025-07-31','20:49:00.000000','2025-07-30 08:49:42.978339','Nguyen Van A',1,'0982376667','','CONFIRMED',53),(23,'vip','2025-08-09','19:16:00.000000','2025-08-01 19:11:02.700598','Nguyen Van A',1,'0982376667','','CONFIRMED',53),(24,'vip','2025-08-08','20:22:00.000000','2025-08-01 19:22:18.610149','Nguyen Van A',2,'0982376667','','CONFIRMED',53);
+INSERT INTO `bookings` VALUES (6,'outdoor','2025-08-02','08:58:00.000000','2025-07-27 07:58:50.674535','hhh',2,'0982376668','','CONFIRMED',53),(7,'vip','2025-07-30','09:49:00.000000','2025-07-29 09:43:49.979863','hhh',3,'0937874649','','CONFIRMED',53),(12,'indoor','2025-07-31','12:47:00.000000','2025-07-29 12:42:30.649579','hhh',3,'0982376667','Dị ứng hải sản\n','CONFIRMED',53),(14,'vip','2025-08-01','07:48:00.000000','2025-07-30 07:47:51.575029','Nguyen Van A',1,'0982376667','','CANCELLED',53),(18,'indoor','2025-08-01','20:42:00.000000','2025-07-30 08:42:35.023205','hhhhh',1,'0982376667','','CONFIRMED',58),(19,'indoor','2025-08-02','08:48:00.000000','2025-07-30 08:43:02.893763','jjj',1,'0982376667','','CONFIRMED',58),(21,'indoor','2025-07-31','20:49:00.000000','2025-07-30 08:49:42.978339','Nguyen Van A',1,'0982376667','','CONFIRMED',53),(23,'vip','2025-08-09','19:16:00.000000','2025-08-01 19:11:02.700598','Nguyen Van A',1,'0982376667','','CONFIRMED',53),(24,'vip','2025-08-08','20:22:00.000000','2025-08-01 19:22:18.610149','Nguyen Van A',2,'0982376667','','CONFIRMED',53),(25,'indoor','2025-11-28','13:49:00.000000','2025-11-28 13:45:37.858975','trinh thanh nhat',6,'0379290665','sdsd','CANCELLED',86),(26,'outdoor','2025-12-23','08:58:00.000000','2025-12-04 22:23:59.699527','nhat van anh',2,'0982376668','','PENDING',86);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +69,7 @@ CREATE TABLE `cart_items` (
   KEY `FK1re40cjegsfvw58xrkdp6bac6` (`product_id`),
   CONSTRAINT `FK1re40cjegsfvw58xrkdp6bac6` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `FKpcttvuq4mxppo8sxggjtn5i2c` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +78,7 @@ CREATE TABLE `cart_items` (
 
 LOCK TABLES `cart_items` WRITE;
 /*!40000 ALTER TABLE `cart_items` DISABLE KEYS */;
-INSERT INTO `cart_items` VALUES (42,1,35000,22,32),(46,3,195000,25,28),(54,1,89000,30,29),(77,1,159000,22,49),(78,1,32000,22,50);
+INSERT INTO `cart_items` VALUES (42,1,35000,22,32),(46,3,195000,25,28),(54,1,89000,30,29),(77,1,159000,22,49),(78,1,32000,22,50),(85,1,45000,42,27),(86,2,130000,42,28);
 /*!40000 ALTER TABLE `cart_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +95,7 @@ CREATE TABLE `carts` (
   PRIMARY KEY (`id`),
   KEY `FKb5o626f86h46m4s7ms6ginnop` (`user_id`),
   CONSTRAINT `FKb5o626f86h46m4s7ms6ginnop` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,7 +104,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (22,48),(25,58),(30,62);
+INSERT INTO `carts` VALUES (42,30),(22,48),(25,58),(30,62),(43,86);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +120,7 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKt8o6pivur7nn124jehx7cygw5` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +179,7 @@ CREATE TABLE `order_items` (
   KEY `FKocimc7dtr037rh4ls4l95nlfi` (`product_id`),
   CONSTRAINT `FKbioxgbv59vetrxe0ejfubep1w` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   CONSTRAINT `FKocimc7dtr037rh4ls4l95nlfi` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +188,7 @@ CREATE TABLE `order_items` (
 
 LOCK TABLES `order_items` WRITE;
 /*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
-INSERT INTO `order_items` VALUES (12,3,105000,35000,11,32),(25,1,89000,89000,22,29),(27,2,70000,35000,24,32),(31,1,89000,89000,26,29),(34,1,89000,89000,29,29),(35,1,65000,65000,29,28),(38,1,65000,65000,32,28),(39,1,65000,65000,33,28),(43,1,89000,89000,36,29),(44,1,89000,89000,37,29),(45,2,178000,89000,38,29),(46,7,623000,89000,39,29),(47,4,356000,89000,40,29),(49,3,195000,65000,42,28),(50,1,45000,45000,42,27),(51,2,178000,89000,42,29),(52,1,35000,35000,43,32),(53,2,90000,45000,44,47),(54,2,130000,65000,44,28),(55,1,65000,65000,45,28),(56,2,130000,65000,46,28),(57,2,118000,59000,47,35);
+INSERT INTO `order_items` VALUES (12,3,105000,35000,11,32),(25,1,89000,89000,22,29),(27,2,70000,35000,24,32),(31,1,89000,89000,26,29),(34,1,89000,89000,29,29),(35,1,65000,65000,29,28),(38,1,65000,65000,32,28),(39,1,65000,65000,33,28),(43,1,89000,89000,36,29),(44,1,89000,89000,37,29),(45,2,178000,89000,38,29),(46,7,623000,89000,39,29),(47,4,356000,89000,40,29),(49,3,195000,65000,42,28),(50,1,45000,45000,42,27),(51,2,178000,89000,42,29),(52,1,35000,35000,43,32),(53,2,90000,45000,44,47),(54,2,130000,65000,44,28),(55,1,65000,65000,45,28),(56,2,130000,65000,46,28),(57,2,118000,59000,47,35),(59,1,65000,65000,58,28),(60,1,59000,59000,59,35),(61,1,65000,65000,59,28),(62,1,45000,45000,59,27),(63,1,65000,65000,60,28);
 /*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,7 +214,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   KEY `FK32ql8ubntj5uh44ph9659tiih` (`user_id`),
   CONSTRAINT `FK32ql8ubntj5uh44ph9659tiih` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,7 +223,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (11,'dđ','2025-07-28 07:47:00.000000','ghdyu@gmail.com','abc 1238','2025-07-26 20:15:24.570660','SHIPPING','PAID','04875733478',105000,53),(22,'hjhhh','2025-08-01 01:25:00.000000','ghdyu@gmail.com','AA','2025-07-29 10:07:03.457288','SHIPPING','FAILED','04875733478',89000,53),(24,'koo','2025-07-30 10:14:00.000000','ghdyu@gmail.com','AA','2025-07-29 10:11:47.453657','CANCEL_REQUESTED','PENDING','04875733478',70000,53),(26,'uuuu',NULL,'ghdyu@gmail.com','AAA','2025-07-29 11:25:19.370181','CONFIRMED','PENDING','04875733478',89000,53),(29,'ghjh','2025-07-29 13:31:00.000000','ghdyu@gmail.com','AAA','2025-07-29 12:19:55.804446','DELIVERED','PAID','04875733478',154000,53),(32,'65u',NULL,'ghdyu@gmail.com','AAA','2025-07-29 12:35:25.503713','DELIVERED','PAID','04875733478',65000,53),(33,'ghffghg','2025-07-31 08:40:00.000000','ghdyu@gmail.com','AAA','2025-07-30 07:38:58.990730','SHIPPING','PENDING','04875733478',65000,53),(36,'jtyt','2025-07-30 11:04:00.000000','ghdyu@gmail.com','AAA','2025-07-30 07:39:45.712796','SHIPPING','PAID','04875733478',89000,53),(37,'tgytg',NULL,'ghdyu@gmail.com','AAA','2025-07-30 08:05:46.128099','CANCELLED','PENDING','04875733478',89000,53),(38,'njijj',NULL,'ghdyu@gmail.com','AAA','2025-07-30 08:05:55.310522','CANCELLED','PENDING','04875733478',178000,53),(39,'gbyhuuhuby',NULL,'ghdyu@gmail.com','AAA','2025-07-30 08:06:02.456447','CANCELLED','PENDING','04875733478',623000,53),(40,'yhuubh',NULL,'ghdyu@gmail.com','AAA','2025-07-30 08:06:12.087887','CANCELLED','PENDING','04875733478',356000,53),(42,'jiio',NULL,'ghdyu@gmail.com','AAA','2025-07-30 22:47:56.243742','CONFIRMED','PENDING','04875733478',418000,53),(43,'uii',NULL,'ghdyu@gmail.com','AAA','2025-07-30 23:02:44.288485','CONFIRMED','PENDING','04875733478',35000,53),(44,'ghh',NULL,'ghdyu@gmail.com','AAA','2025-08-01 01:08:10.044797','CONFIRMED','PENDING','04875733478',220000,53),(45,'huhur',NULL,'ghdyu@gmail.com','AAA','2025-08-01 19:10:22.757891','CANCELLED','PENDING','04875733478',65000,53),(46,'uyuu','2025-08-02 20:14:00.000000','ghdyu@gmail.com','AAA','2025-08-01 19:10:39.467983','SHIPPING','PENDING','04875733478',130000,53),(47,'HN','2025-08-01 21:25:00.000000','ghdyu@gmail.com','AAA','2025-08-01 19:21:02.946306','SHIPPING','PENDING','04875733478',118000,53);
+INSERT INTO `orders` VALUES (11,'Hà Nội','2025-07-28 07:47:00.000000','ghdyu@gmail.com','Nguyễn Tuấn A','2025-07-26 20:15:24.570660','DELIVERED','PAID','0987123456',105000,53),(22,'Hồ Chí Minh','2025-12-01 11:10:00.000000','ghdyu@gmail.com','Lê Minh B','2025-07-29 10:07:03.457288','SHIPPING','FAILED','0987654321',89000,53),(24,'Đà Nẵng','2025-07-30 10:14:00.000000','ghdyu@gmail.com','Trần Quốc C','2025-07-29 10:11:47.453657','CANCEL_REQUESTED','PENDING','0977332211',70000,53),(26,'Hải Phòng',NULL,'ghdyu@gmail.com','Phạm Hữu D','2025-07-29 11:25:19.370181','CONFIRMED','PENDING','0944556677',89000,53),(29,'Hà Nội','2025-07-29 13:31:00.000000','ghdyu@gmail.com','Nguyễn Văn E','2025-07-29 12:19:55.804446','CONFIRMED','PAID','0933445566',154000,53),(32,'Nghệ An',NULL,'ghdyu@gmail.com','Đặng Thị F','2025-07-29 12:35:25.503713','DELIVERED','PAID','0911223344',65000,53),(33,'Thanh Hóa','2025-07-31 08:40:00.000000','ghdyu@gmail.com','Hoàng Mạnh G','2025-07-30 07:38:58.990730','SHIPPING','PENDING','0977445668',65000,53),(36,'Hà Nam','2025-07-30 11:04:00.000000','ghdyu@gmail.com','Nguyễn Thu H','2025-07-30 07:39:45.712796','SHIPPING','PAID','0988776655',89000,53),(37,'Quảng Ninh',NULL,'ghdyu@gmail.com','Trần Hữu I','2025-07-30 08:05:46.128099','CANCELLED','PENDING','0989112233',89000,53),(38,'Huế',NULL,'ghdyu@gmail.com','Phạm Quốc K','2025-07-30 08:05:55.310522','CANCELLED','PENDING','0912345678',178000,53),(39,'Bắc Ninh',NULL,'ghdyu@gmail.com','Nguyễn Thành L','2025-07-30 08:06:02.456447','CANCELLED','PENDING','0944332211',623000,53),(40,'Hòa Bình',NULL,'ghdyu@gmail.com','Đào Thị M','2025-07-30 08:06:12.087887','CANCELLED','PENDING','0988776654',356000,53),(42,'Hà Nội',NULL,'ghdyu@gmail.com','Nguyễn Gia N','2025-07-30 22:47:56.243742','CONFIRMED','PENDING','0988112233',418000,53),(43,'Hồ Chí Minh',NULL,'ghdyu@gmail.com','Phan Thị O','2025-07-30 23:02:44.288485','CONFIRMED','PENDING','0912334455',35000,53),(44,'Đà Nẵng',NULL,'ghdyu@gmail.com','Võ Minh P','2025-08-01 01:08:10.044797','CONFIRMED','PENDING','0912888999',220000,53),(45,'Huế',NULL,'ghdyu@gmail.com','Hoàng Nguyễn Q','2025-08-01 19:10:22.757891','CANCELLED','PENDING','0933445567',65000,53),(46,'Hà Nội','2025-08-02 20:14:00.000000','ghdyu@gmail.com','Nguyễn Hữu R','2025-08-01 19:10:39.467983','SHIPPING','PENDING','0988111000',130000,53),(47,'Bắc Giang','2025-08-01 21:25:00.000000','ghdyu@gmail.com','Trần Văn S','2025-08-01 19:21:02.946306','SHIPPING','PENDING','0912777888',118000,53),(48,'Hà Nội','2025-08-05 10:20:00.000000','a1@gmail.com','Nguyễn Văn A','2025-08-02 09:10:20.123456','CONFIRMED','PENDING','0987554321',78000,70),(49,'Hồ Chí Minh','2025-08-06 14:30:00.000000','b@gmail.com','Nguyễn Văn B','2025-08-03 11:45:12.987654','CONFIRMED','PENDING','0937888999',129000,71),(50,'Đà Nẵng','2025-08-07 18:10:00.000000','nguyenc@example.com','Lê Thị C','2025-08-03 15:09:33.112233','DELIVERED','PAID','0945667788',165000,73),(51,'Hải Phòng','2025-08-08 09:15:00.000000','du@gmail.com','Lê Minh D','2025-08-04 09:15:45.556677','SHIPPING','PAID','0934445566',48000,48),(52,'Cần Thơ','2025-08-10 12:25:00.000000','riiccky01@gmail.com','Ricky Nguyễn','2025-08-04 12:04:34.998877','CONFIRMED','PENDING','0476578687',99000,62),(53,'Huế','2025-08-11 19:40:00.000000','hgru@gmail.com','Minh MC','2025-08-04 18:04:00.112255','SHIPPING','PENDING','0476578687',135000,64),(54,'Hồ Chí Minh','2025-08-12 20:30:00.000000','hh@gmail.com','Hồ Hữu Hạnh','2025-08-05 12:55:22.882200','DELIVERED','PAID','0937874646',275000,58),(55,'Quảng Ninh','2025-08-13 07:50:00.000000','nguyenc@example.com','Lê Thị C','2025-08-05 07:22:33.334455','CANCEL_REQUESTED','PENDING','0945667788',125000,73),(56,'Hà Nội','2025-08-14 13:33:00.000000','abc@gmail.com','Nguyễn ABC','2025-08-06 12:22:44.556677','CONFIRMED','PENDING','0948775600',45000,47),(57,'Hải Dương','2025-08-15 15:20:00.000000','du@gmail.com','Lê Minh D','2025-08-06 14:55:12.774411','SHIPPING','PENDING','0934445566',59000,48),(58,'nhat, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang','2222-02-22 11:11:00.000000','trinhthanhnhat123@gmail.com','TRỊNH THANH NHẤT','2025-11-30 13:23:45.054566','SHIPPING','PENDING','0379290665',65000,86),(59,'aaa, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang',NULL,'trinhthanhnhat123@gmail.com','TRỊNH THANH NHẤT','2025-11-30 18:48:16.229027','CANCEL_REQUESTED','PENDING','0379290665',169000,86),(60,'aaa, Xã Lũng Cú, Huyện Đồng Văn, Tỉnh Hà Giang',NULL,'trinhthanhnhat123@gmail.com','TRỊNH THANH NHẤT','2025-11-30 18:52:45.047730','CANCEL_REQUESTED','PENDING','0379290665',65000,86);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,7 +241,7 @@ CREATE TABLE `payments` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK8vo36cen604as7etdfwmyjsxt` (`order_id`),
   CONSTRAINT `FK81gagumt0r8y3rmudcgpbk42l` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -260,7 +250,7 @@ CREATE TABLE `payments` (
 
 LOCK TABLES `payments` WRITE;
 /*!40000 ALTER TABLE `payments` DISABLE KEYS */;
-INSERT INTO `payments` VALUES (11,'ONLINE_PAYMENT',11),(22,'CASH_ON_DELIVERY',22),(24,'ONLINE_PAYMENT',24),(26,'CASH_ON_DELIVERY',26),(29,'CASH_ON_DELIVERY',29),(32,'CASH_ON_DELIVERY',32),(33,'CASH_ON_DELIVERY',33),(36,'CASH_ON_DELIVERY',36),(37,'CASH_ON_DELIVERY',37),(38,'CASH_ON_DELIVERY',38),(39,'CASH_ON_DELIVERY',39),(40,'ONLINE_PAYMENT',40),(42,'CASH_ON_DELIVERY',42),(43,'CASH_ON_DELIVERY',43),(44,'CASH_ON_DELIVERY',44),(45,'CASH_ON_DELIVERY',45),(46,'ONLINE_PAYMENT',46),(47,'CASH_ON_DELIVERY',47);
+INSERT INTO `payments` VALUES (11,'ONLINE_PAYMENT',11),(22,'CASH_ON_DELIVERY',22),(24,'ONLINE_PAYMENT',24),(26,'CASH_ON_DELIVERY',26),(29,'CASH_ON_DELIVERY',29),(32,'CASH_ON_DELIVERY',32),(33,'CASH_ON_DELIVERY',33),(36,'CASH_ON_DELIVERY',36),(37,'CASH_ON_DELIVERY',37),(38,'CASH_ON_DELIVERY',38),(39,'CASH_ON_DELIVERY',39),(40,'ONLINE_PAYMENT',40),(42,'CASH_ON_DELIVERY',42),(43,'CASH_ON_DELIVERY',43),(44,'CASH_ON_DELIVERY',44),(45,'CASH_ON_DELIVERY',45),(46,'ONLINE_PAYMENT',46),(47,'CASH_ON_DELIVERY',47),(49,'CASH_ON_DELIVERY',58),(50,'ONLINE_PAYMENT',59),(51,'CASH_ON_DELIVERY',60);
 /*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,7 +266,7 @@ CREATE TABLE `product_types` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK6iopyn5hbyxusogmmwjr5ci2q` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,7 +302,7 @@ CREATE TABLE `products` (
   KEY `FKrv6og3b2qlahvka0bxn7btyqd` (`product_type_id`),
   CONSTRAINT `FKog2rp4qthbtt2lfyhfo32lsw9` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
   CONSTRAINT `FKrv6og3b2qlahvka0bxn7btyqd` FOREIGN KEY (`product_type_id`) REFERENCES `product_types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +311,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (27,'Cơm vàng giòn rụm kết hợp cùng gà xối mỡ béo ngậy, món ăn truyền thống đậm đà hương vị Việt.','Cơm Gà Xối Mỡ',10,45000,'http://localhost:5173/images/Product/com-ga-xoi-mo.jpg',50000,'AVAILABLE',2,2),(28,'Gà rán giòn tan phủ lớp phô mai béo ngậy, món ăn vặt yêu thích của mọi lứa tuổi.','Gà Rán Phô Mai',13.33,65000,'http://localhost:5173/images/Product/ga-ran-pho-mai.jpg',75000,'AVAILABLE',2,1),(29,'Một sự kết hợp tinh tế giữa chocolate đắng nhẹ và matcha thanh mát, bánh mousse mềm mịn tan chảy trong miệng.','Chocolate matcha cake mousse',10.1,89000,'http://localhost:5173/images/Product/banh-ngot.png',99000,'AVAILABLE',2,5),(30,'Pizza nóng hổi với lớp phô mai kéo sợi thơm lừng, tan chảy trong từng miếng cắn – lựa chọn hoàn hảo cho mọi bữa tiệc.','Pizza Phô Mai',13.33,130000,'http://localhost:5173/images/Product/pizza-pho-mai.jpg',150000,'AVAILABLE',3,3),(31,'Salad thanh mát với lát cá hồi tươi ngon, giàu dinh dưỡng, phù hợp cho người ăn kiêng hoặc yêu thích món nhẹ.','Salad Cá Hồi',17.65,70000,'http://localhost:5173/images/Product/salad-ca-hoi.jpg',85000,'AVAILABLE',1,4),(32,'Trà sữa đậm đà hòa quyện cùng trân châu dai giòn, thức uống yêu thích của giới trẻ mọi thời đại.','Trà Sữa Trân Châu',12.5,35000,'http://localhost:5173/images/Product/tra-sua.jpg',40000,'AVAILABLE',1,6),(33,'Topping hải sản tươi ngon phủ đầy lớp phô mai béo ngậy, đế bánh giòn rụm – món ăn không thể bỏ lỡ.','Pizza Hải Sản',28,135000,'http://localhost:5173/images/Product/pizza-hai-san.jpg',187500,'AVAILABLE',4,3),(34,'Bánh mì kẹp thịt gà chiên giòn, sốt đậm đà, rau tươi – bữa ăn nhanh đầy năng lượng và hương vị.','Hamburger Gà',12.73,48000,'http://localhost:5173/images/Product/hamburger-ga.jpg',55000,'AVAILABLE',4,7),(35,'Sườn nướng than hoa thơm lừng kết hợp cùng cơm trắng dẻo, đậm vị truyền thống Việt.','Cơm Sườn Nướng',15.71,59000,'http://localhost:5173/images/Product/com-suon-nuong.jpg',70000,'AVAILABLE',3,2),(37,'Thịt gà mềm ngọt thấm đẫm sốt cay kiểu Hàn, cay nồng quyến rũ đúng chuẩn vị xứ kim chi.','Gà Sốt Cay Hàn Quốc',18.82,69000,'http://localhost:5173/images/Product/ga-ran-sot-cay.jpg',85000,'OUT_OF_STOCK',4,1),(38,'Món salad thanh đạm với nhiều loại rau củ tươi giòn, cung cấp chất xơ và vitamin cho cơ thể.','Salad Rau Củ',24.62,49000,'http://localhost:5173/images/Product/salad-rau-cu.png',65000,'AVAILABLE',3,4),(44,'Vỏ bánh mềm, nhân kem vani mát lạnh, tan chảy trong miệng.','Bánh su kem',20,20000,'http://localhost:5173/images/Product/banh-su-kem.png',25000,'OUT_OF_STOCK',1,5),(45,'Vị trà thanh mát kết hợp với đào ngâm và hương cam sả dịu nhẹ','Trà Đào Cam Sả',10,27000,'http://localhost:5173/images/Product/tra_dao.jpg',30000,'AVAILABLE',3,6),(46,'Bánh mì mềm kẹp bò nướng, rau củ và phô mai tan chảy hấp dẫn.\n\n','Burger Bò Phô Mai',8.33,55000,'http://localhost:5173/images/Product/hamburger-bo-pho-mai.jpg',60000,'AVAILABLE',3,7),(47,'Rau xanh tươi trộn cùng ức gà áp chảo và sốt mè rang thơm béo.','Salad Ức Gà',10,45000,'http://localhost:5173/images/Product/salad_uc_ga.jpg',50000,'AVAILABLE',1,4),(48,'Cơm chiên vàng ươm cùng trứng, tôm, lạp xưởng, cà rốt và đậu hà lan, vị mặn ngọt hài hòa – chuẩn món Hoa quen thuộc.','Cơm Chiên Dương Châu',9.62,47000,'http://localhost:5173/images/Product/com-chien.jpg',52000,'AVAILABLE',1,2),(49,'hịt bò nướng mềm ngọt thấm vị sốt BBQ, ăn kèm đế pizza giòn nhẹ và lớp phô mai kéo sợi hấp dẫn – một lựa chọn đậm vị Mỹ.','Pizza Bò Nướng BBQ',3.64,159000,'http://localhost:5173/images/Product/pizza-bo.jpg',165000,'AVAILABLE',1,3),(50,'Lớp mousse mềm mịn tan ngay đầu lưỡi, đậm vị socola nguyên chất và không quá ngọt – món bánh lý tưởng cho người sành ăn.','Bánh Mousse Socola',8.57,32000,'http://localhost:5173/images/Product/banh-ngot-2.jpg',35000,'AVAILABLE',3,5);
+INSERT INTO `products` VALUES (27,'Cơm vàng giòn rụm kết hợp cùng gà xối mỡ béo ngậy, món ăn truyền thống đậm đà hương vị Việt.','Cơm Gà Xối Mỡ',10,45000,'http://localhost:5173/images/Product/com-ga-xoi-mo.jpg',50000,'AVAILABLE',2,2),(28,'Gà rán giòn tan phủ lớp phô mai béo ngậy, món ăn vặt yêu thích của mọi lứa tuổi.','Gà Rán Phô Mai',13.33,65000,'http://localhost:5173/images/Product/ga-ran-pho-mai.jpg',75000,'AVAILABLE',2,1),(29,'Một sự kết hợp tinh tế giữa chocolate đắng nhẹ và matcha thanh mát, bánh mousse mềm mịn tan chảy trong miệng.','Chocolate matcha cake mousse',10.1,89000,'http://localhost:5173/images/Product/banh-ngot.png',99000,'AVAILABLE',2,5),(30,'Pizza nóng hổi với lớp phô mai kéo sợi thơm lừng, tan chảy trong từng miếng cắn – lựa chọn hoàn hảo cho mọi bữa tiệc.','Pizza Phô Mai',13.33,130000,'http://localhost:5173/images/Product/pizza-pho-mai.jpg',150000,'AVAILABLE',3,3),(31,'Salad thanh mát với lát cá hồi tươi ngon, giàu dinh dưỡng, phù hợp cho người ăn kiêng hoặc yêu thích món nhẹ.','Salad Cá Hồi',17.65,70000,'http://localhost:5173/images/Product/salad-ca-hoi.jpg',85000,'AVAILABLE',1,4),(32,'Trà sữa đậm đà hòa quyện cùng trân châu dai giòn, thức uống yêu thích của giới trẻ mọi thời đại.','Trà Sữa Trân Châu',12.5,35000,'http://localhost:5173/images/Product/tra-sua.jpg',40000,'AVAILABLE',1,6),(35,'Sườn nướng than hoa thơm lừng kết hợp cùng cơm trắng dẻo, đậm vị truyền thống Việt.','Cơm Sườn Nướng',15.71,59000,'http://localhost:5173/images/Product/com-suon-nuong.jpg',70000,'AVAILABLE',3,2),(37,'Thịt gà mềm ngọt thấm đẫm sốt cay kiểu Hàn, cay nồng quyến rũ đúng chuẩn vị xứ kim chi.','Gà Sốt Cay Hàn Quốc',18.82,69000,'http://localhost:5173/images/Product/ga-ran-sot-cay.jpg',85000,'OUT_OF_STOCK',4,1),(38,'Món salad thanh đạm với nhiều loại rau củ tươi giòn, cung cấp chất xơ và vitamin cho cơ thể.','Salad Rau Củ',24.62,49000,'http://localhost:5173/images/Product/salad-rau-cu.png',65000,'AVAILABLE',3,4),(44,'Vỏ bánh mềm, nhân kem vani mát lạnh, tan chảy trong miệng.','Bánh su kem',20,20000,'http://localhost:5173/images/Product/banh-su-kem.png',25000,'OUT_OF_STOCK',1,5),(45,'Vị trà thanh mát kết hợp với đào ngâm và hương cam sả dịu nhẹ','Trà Đào Cam Sả',10,27000,'http://localhost:5173/images/Product/tra_dao.jpg',30000,'AVAILABLE',3,6),(46,'Bánh mì mềm kẹp bò nướng, rau củ và phô mai tan chảy hấp dẫn.\n\n','Burger Bò Phô Mai',8.33,55000,'http://localhost:5173/images/Product/hamburger-bo-pho-mai.jpg',60000,'AVAILABLE',3,7),(47,'Rau xanh tươi trộn cùng ức gà áp chảo và sốt mè rang thơm béo.','Salad Ức Gà',10,45000,'http://localhost:5173/images/Product/salad_uc_ga.jpg',50000,'AVAILABLE',1,4),(48,'Cơm chiên vàng ươm cùng trứng, tôm, lạp xưởng, cà rốt và đậu hà lan, vị mặn ngọt hài hòa – chuẩn món Hoa quen thuộc.','Cơm Chiên Dương Châu',9.62,47000,'http://localhost:5173/images/Product/com-chien.jpg',52000,'AVAILABLE',1,2),(49,'hịt bò nướng mềm ngọt thấm vị sốt BBQ, ăn kèm đế pizza giòn nhẹ và lớp phô mai kéo sợi hấp dẫn – một lựa chọn đậm vị Mỹ.','Pizza Bò Nướng BBQ',3.64,159000,'http://localhost:5173/images/Product/pizza-bo.jpg',165000,'AVAILABLE',1,3),(50,'Lớp mousse mềm mịn tan ngay đầu lưỡi, đậm vị socola nguyên chất và không quá ngọt – món bánh lý tưởng cho người sành ăn.','Bánh Mousse Socola',8.57,32000,'http://localhost:5173/images/Product/banh-ngot-2.jpg',35000,'AVAILABLE',3,5);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -373,7 +363,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
-INSERT INTO `user_roles` VALUES (28,24),(30,24),(41,24),(47,25),(48,25),(53,25),(58,25),(62,25),(64,25),(70,25),(71,25),(72,25),(73,25),(74,25),(75,25);
+INSERT INTO `user_roles` VALUES (28,24),(30,24),(41,24),(47,25),(48,25),(53,25),(58,25),(62,25),(64,25),(70,25),(71,25),(72,25),(73,25),(74,25),(75,25),(86,25),(87,25);
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +385,7 @@ CREATE TABLE `users` (
   `phone_number` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKr43af9ap4edm43mmtq01oddj6` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,11 +394,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES 
-(28,'admin2@example.com',_binary '','abc123','admin1',NULL,'',NULL),
-(30,'admin@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','admin2','HNN','Quản Trị Viên','09823766679'),
-(41,'duc111@gmail.com',_binary '','$2a$10$C4RJcegLY2KTW/0/Op.aYOBLvbYTp02npSA3k.uYy0CJDlvf.UmTK','ducle02',NULL,'',NULL),
-(47,'abc@gmail.com',_binary '','$2a$10$f7kr3tQkmQSE/Zw6mc7gvOIAAb9g0odK/YgLYC9zmEVNpTbPIZ8Km','abc','ABCB','abcd','09487756'),(48,'du@gmail.com',_binary '','$2a$10$rcgxs6guZWPUYsbJym72Buv2R/6w.ni8kv0LaFbOtKtkIWgIicwny','ducle002','Hà Nội, Việt Nam','L M D','0937874645'),(53,'ghdyu@gmail.com',_binary '','$2a$10$I1plTSFEAuXj9iLDTh/80ewagW6w/GCXNKh5sioz5PelUGVnmkfJu','abc123','H N','AAA','04875733478'),(58,'hh@gmail.com',_binary '','$2a$10$rWI/Z5gBXxSvy6oeh1iKXuXEZaDnC1ZU9k5.Noafrxox2Ylc34hnK','hhhh','HNN','hhh','0937874646'),(62,'riiccky01@gmail.com',_binary '','$2a$10$tCPXQ.eZIBZn3cCyjgLDsuk69xWIYY.Xa8dKDWP3Sr4ia6nOvNlgm','aa123','nyyy@gmail.com','uyd','0476578687'),(64,'hgru@gmail.com',_binary '','$2a$10$tqqYmb49w/4J8DDezya/1.0UHTS6Ed7wpzc0.FtrmOJTj8FYURStu','mmc','HN','MCK','0476578687'),(70,'a1@gmail.com',_binary '','$2a$10$iyJdy1F.o/wf14NIu.1cU.y9K075tZn3Dn8oybJDq/54p30tq2Cau','NVA','TPHCM','Nguyễn Văn A','0988558680'),(71,'b@gmail.com',_binary '','$2a$10$Yq09/5HmuK8Gj3LsjItGFOCr4NztJfyhKi5uwu/a8loKstsrG6PNK','nvb','Hà Nội, Việt Nam','Nguyễn Văn B','0937874649'),(72,'riicckyc@gmail.com',_binary '','$2a$10$A8CbCAGbX78./3KmtTsJDedMJZbFhJI.8LLp/UI9gTLHLbZz.GrfO','nvc','Hà Nội, Việt Nam','Nguyễn Văn C','0476578687'),(73,'nguyenc@example.com',_binary '','$2a$10$V.PmEsXHKDehmsxSGvRdOuja3A34Kw0rzjPJ6/9njp1wobE4GAY1W','LTC','TPHCM','Lê Thị C','0476578687'),(74,'nvd@gmail.com',_binary '','$2a$10$2d6DUlsuYelT0EbGxIWXsu94M90dWRDub0JzFHwfWFAlrriTL0DlG','NVD','TPHCM','Nguyễn Văn D','0988558680'),(75,'h@gmail.com',_binary '','$2a$10$VeX6QS8.RZDbMUGA7TgWOuH0lAkwF9RWVtE6XYZrMO7U8B2do5REO','LTH','TPHCM','Lê Thị H','0988668780');
+INSERT INTO `users` VALUES (28,'admin2@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','admin1','Hà Nội','Quản trị viên 1','0901234567'),(30,'admin@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','admin2','Hồ Chí Minh','Quản Trị Viên','09823766679'),(41,'duc111@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','ducle02','Hà Nội','Đức Lê','0912233445'),(47,'abc@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','abc','Đà Nẵng','Nguyễn ABC','0948775600'),(48,'du@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','ducle002','Hà Nội','Lê Minh Đức','0937874645'),(53,'ghdyu@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','abc123','Hà Nội','Anh A','04875733478'),(58,'hh@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','hhhh','Hồ Chí Minh','Hồ Hữu Hạnh','0937874646'),(62,'riiccky01@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','aa123','Hà Nội','Ricky Nguyễn','0476578687'),(64,'hgru@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','mmc','Hải Phòng','Minh MC','0476578687'),(70,'a1@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','NVA','TPHCM','Nguyễn Văn A','0988558680'),(71,'b@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','nvb','Hà Nội','Nguyễn Văn B','0937874649'),(72,'riicckyc@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','nvc','Hà Nội','Nguyễn Văn C','0476578687'),(73,'nguyenc@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','LTC','TPHCM','Lê Thị C','0476578687'),(74,'nvd@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','NVD','TPHCM','Nguyễn Văn D','0988558680'),(75,'h@gmail.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','LTH','TPHCM','Lê Thị H','0988668780'),(76,'nguyenvana@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','vana','Hà Nội','Nguyễn Văn A','0904455661'),(77,'tranthib@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','thib','Hải Phòng','Trần Thị B','0915566772'),(78,'lequocth@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','quocth','Đà Nẵng','Lê Quốc Thịnh','0936677883'),(79,'phamminhc@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','minhc','Cần Thơ','Phạm Minh Cường','0977888994'),(80,'dangkimd@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','kimd','Hồ Chí Minh','Đặng Kim Dung','0968899770'),(81,'hoangson@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','sonh','Hà Nội','Hoàng Sơn','0923344556'),(82,'vuhoang@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','vuh','Nghệ An','Vũ Hoàng','0942233445'),(83,'tranthanh@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','thanht','Hà Nội','Trần Thành','0912345698'),(84,'ngocanh@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','anhng','TPHCM','Ngọc Anh','0934567812'),(85,'phamduy@example.com',_binary '','$2a$10$EnsAUh.5gxChIcnrttMDhOxki5233S5khuAsXyVsUVuJAniiKDFVi','duyp','Đồng Nai','Phạm Duy','0971122334'),(86,'trinhthanhnhat123@gmail.com',_binary '','$2a$10$d9cpRnvo1j11WChNgsgLjevsNqxivZVs0A6udNdwJm77BHnUnigv2','nhat','Số 1, Ngõ 2, Đường Làng Phú Tỉnh, Thôn 1','TRỊNH THANH NHẤT','0379290665'),(87,'user@gmail.com',_binary '','$2a$10$IJ05N9hiCM/2mUVcekswNe4EqXuIpQC1.kn3EgtlLbC3mxX67YzU.','trinhduy','hfhfhfhfhhf','usee','0964166836');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -421,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-01 19:55:03
+-- Dump completed on 2025-12-08 14:29:51
