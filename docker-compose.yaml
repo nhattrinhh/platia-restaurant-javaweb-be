@@ -10,6 +10,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: platia
     ports:
       - "3306:3306"
     volumes:
@@ -17,11 +18,13 @@ services:
       - ./initdb:/docker-entrypoint-initdb.d
 
   springboot:
-    build: ./springboot
+    build: .
     container_name: springboot
     restart: always
     depends_on:
       - mysql
+    ports:
+      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/platia?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
