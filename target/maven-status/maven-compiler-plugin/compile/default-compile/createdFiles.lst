@@ -26,6 +26,7 @@ com\web\web\Dto\LoginDTO.class
 com\web\web\Dto\CartDTO.class
 com\web\web\Dto\ChatResponse.class
 com\web\web\Entity\Category.class
+com\web\web\Config\CorsConfig.class
 com\web\web\Entity\Order$OrderStatus.class
 com\web\web\Service\BookingService.class
 com\web\web\Entity\Booking.class
@@ -34,6 +35,7 @@ com\web\web\Controller\OrderController.class
 com\web\web\Service\ProductTypeService.class
 com\web\web\Entity\Cart.class
 com\web\web\Repository\NewsRepository.class
+com\web\web\Config\CorsConfig$1.class
 com\web\web\Controller\DeliveryDateRequest.class
 com\web\web\Repository\CategoryRepository.class
 com\web\web\Dto\CartItemDTO.class
