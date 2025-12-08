@@ -26,7 +26,6 @@ com\web\web\Dto\LoginDTO.class
 com\web\web\Dto\CartDTO.class
 com\web\web\Dto\ChatResponse.class
 com\web\web\Entity\Category.class
-com\web\web\Config\CorsConfig.class
 com\web\web\Entity\Order$OrderStatus.class
 com\web\web\Service\BookingService.class
 com\web\web\Entity\Booking.class
