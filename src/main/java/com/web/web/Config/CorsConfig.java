@@ -15,8 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Áp dụng cho tất cả API dưới /api
                         .allowedOrigins(
-                                "https://nhat.cloud",
-                                "https://www.nhat.cloud") // Thêm origin của Front-end
+                                "https://nhat.cloud") // Thêm origin của Front-end
                         .allowedMethods("*")// Thêm origin của Front-end
                         .allowedHeaders("*") // Các phương thức được phép "GET", "POST", "PUT", "DELETE", "OPTIONS"
                         .allowCredentials(true);// Cho phép cookie, authorization headers, v.v.
