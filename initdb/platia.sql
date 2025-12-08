@@ -18,7 +18,17 @@
 --
 -- Table structure for table `bookings`
 --
+-- Tạo database nếu chưa tồn tại
+CREATE DATABASE IF NOT EXISTS platia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+-- Tạo user nếu chưa có
+CREATE USER IF NOT EXISTS 'user123'@'%' IDENTIFIED BY 'pass123';
+
+GRANT ALL PRIVILEGES ON platia.* TO 'user123'@'%';
+FLUSH PRIVILEGES;
+
+-- Sử dụng database
+USE platia;
 
 DROP TABLE IF EXISTS `bookings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
