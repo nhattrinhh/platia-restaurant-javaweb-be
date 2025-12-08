@@ -35,7 +35,6 @@ com\web\web\Controller\OrderController.class
 com\web\web\Service\ProductTypeService.class
 com\web\web\Entity\Cart.class
 com\web\web\Repository\NewsRepository.class
-com\web\web\Config\CorsConfig$1.class
 com\web\web\Controller\DeliveryDateRequest.class
 com\web\web\Repository\CategoryRepository.class
 com\web\web\Dto\CartItemDTO.class
