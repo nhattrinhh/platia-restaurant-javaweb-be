@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ResponseEntity<Map<String, String>> handleMaxSizeException(MaxUploadSizeExceededException ex) {
         Map<String, String> body = new HashMap<>();
-        body.put("message", "Kích thước file vượt quá giới hạn (tối đa 10MB). Vui lòng chọn file nhỏ hơn.");
+        body.put("message", "Kích thước file vượt quá giới hạn (tối đa 50MB). Vui lòng chọn file nhỏ hơn.");
         return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(body);
     }
 

@@ -1,6 +1,10 @@
 spring:
   application:
     name: web
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 
   datasource:
     url: jdbc:mysql://mysql:3306/platia?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
@@ -15,6 +19,12 @@ spring:
 
   thymeleaf:
     check-template-location: false
+server:
+  tomcat:
+    # Allow larger requests to be swallowed by Tomcat (50MB)
+    max-swallow-size: 52428800
+    # Optional: increase connection timeout to allow longer uploads
+    connection-timeout: 120000
 r2:
   endpoint: "https://542e0ef2f822d201f057aef8b3e21503.r2.cloudflarestorage.com"
   access-key: "0fc9be7571d35967b44756d6eba74ff8"
