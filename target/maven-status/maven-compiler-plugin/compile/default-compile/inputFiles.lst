@@ -2,6 +2,7 @@ C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\AppConfig.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\CorsConfig.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\JwtAuthenticationFilter.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\JwtUtil.java
+C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\R2Config.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Config\SecurityConfig.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\AuthController.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\BookingController.java
@@ -13,6 +14,7 @@ C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\OrderController.
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\ProductController.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\ProductTypeController.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\StatisticsController.java
+C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\UploadController.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Controller\UserController.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Dto\BookingDTO.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Dto\CartDTO.java
@@ -42,6 +44,7 @@ C:\Users\asus\Documents\be\src\main\java\com\web\web\Entity\Product.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Entity\ProductType.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Entity\Role.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Entity\User.java
+C:\Users\asus\Documents\be\src\main\java\com\web\web\Exception\GlobalExceptionHandler.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\imp\UserServiceImp.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Repository\BookingRepository.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Repository\CartItemRepository.java
@@ -63,6 +66,7 @@ C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\NewsService.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\OrderService.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\ProductService.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\ProductTypeService.java
+C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\R2Service.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\StatisticsService.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\Service\UserService.java
 C:\Users\asus\Documents\be\src\main\java\com\web\web\WebApplication.java

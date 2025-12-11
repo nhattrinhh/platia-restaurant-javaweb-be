@@ -18,6 +18,7 @@ com\web\web\Controller\CategoryController.class
 com\web\web\Dto\UserDTO.class
 com\web\web\Service\error\GlobalException.class
 com\web\web\Service\NewsService.class
+com\web\web\Service\R2Service.class
 com\web\web\Service\OrderService.class
 com\web\web\WebApplication.class
 com\web\web\Controller\CartController.class
@@ -38,11 +39,13 @@ com\web\web\Repository\NewsRepository.class
 com\web\web\Config\CorsConfig$1.class
 com\web\web\Controller\DeliveryDateRequest.class
 com\web\web\Repository\CategoryRepository.class
+com\web\web\Controller\UploadController.class
 com\web\web\Dto\CartItemDTO.class
 com\web\web\imp\UserServiceImp.class
 com\web\web\Entity\Order$PaymentStatus.class
 com\web\web\Config\AppConfig.class
 com\web\web\Entity\Order.class
+com\web\web\Config\R2Config.class
 com\web\web\Controller\BookingController.class
 com\web\web\Controller\OrderRequest.class
 com\web\web\Repository\ProductRepository.class
@@ -70,6 +73,7 @@ com\web\web\Service\CategoryService.class
 com\web\web\Repository\RoleRepository.class
 com\web\web\Dto\BookingDTO.class
 com\web\web\Entity\ProductType.class
+com\web\web\Exception\GlobalExceptionHandler.class
 com\web\web\Dto\CategoryDTO.class
 com\web\web\Service\UserService.class
 com\web\web\Controller\OrderFromProductRequest.class
