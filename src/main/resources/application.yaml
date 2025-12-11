@@ -15,6 +15,14 @@ spring:
 
   thymeleaf:
     check-template-location: false
+
+server:
+  tomcat:
+    connection-timeout: 120000
+    threads:
+      max: 200
+      min-spare: 10
+
 r2:
   endpoint: "https://542e0ef2f822d201f057aef8b3e21503.r2.cloudflarestorage.com"
   access-key: "0fc9be7571d35967b44756d6eba74ff8"
