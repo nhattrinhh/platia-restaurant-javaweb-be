@@ -3,6 +3,7 @@ package com.web.web.Controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/upload")
+@CrossOrigin(origins = { "https://nhat.cloud", "https://api.nhat.cloud" }, allowCredentials = "true")
 @RequiredArgsConstructor
 public class UploadController {
 

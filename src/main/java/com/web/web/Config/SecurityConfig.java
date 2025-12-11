@@ -18,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.http.HttpMethod;
 
 import java.util.Arrays;
 
@@ -83,6 +84,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/booking/**").authenticated()
                         .requestMatchers("/api/orders/**").authenticated()
                         .requestMatchers("/api/statistics/**").hasRole("ADMIN")
+                        // Cho phép OPTIONS requests cho upload endpoint (CORS preflight)
+                        .requestMatchers(HttpMethod.OPTIONS, "/api/upload/**").permitAll()
+                        .requestMatchers("/api/upload/**").authenticated()
                         .anyRequest().authenticated())
                 // Xử lý lỗi 401 và 403
                 .exceptionHandling(ex -> ex
